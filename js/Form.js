@@ -29,5 +29,11 @@ class Form {
       this.greeting.position(130, 100); 
           }); 
         }
+
+      hide(){
+      this.input.hide();
+      this.button.hide();
+      this.greeting.hide();
+      }
   }
 

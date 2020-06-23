@@ -19,11 +19,11 @@ class Game {
     if(gameState === 0){
       player = new Player();
 
-      var playerCountRef = await database.ref('playerCount').once("value");
-      if(playerCountRef.exists()){
-        playerCount = playerCountRef.val();
+      var playerCountRef = await database.ref('playerCount');
+      playerCountRef.on("value",function(data){
+        playerCount = data.val();
         player.getCount();
-      };
+    })
 
       form = new Form()
       form.display();
@@ -42,7 +42,7 @@ class Game {
           fill('red');
         }
         else{
-          fill('white');
+          fill('BLACK');
         }
         displayPos += 20;
         textSize(15);

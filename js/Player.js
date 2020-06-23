@@ -26,7 +26,7 @@ class Player {
     });
   }
 
-  static getPlayerInfo(){
+  getPlayerInfo(){
     var playerinfoRef = database.ref('players');
     playerinfoRef.on("value",(data)=>{
       allPlayers = data.val(); 
